@@ -1,5 +1,36 @@
+import { Mat } from '.'
+
 export declare let onRuntimeInitialized: () => void
 export declare function getBuildInformation(): string
+
+export declare function matFromArray(
+  rows: number,
+  cols: number,
+  type: number,
+  array: ArrayLike<number>
+): Mat
+export declare function matFromImageData(data: {
+  width: number
+  height: number
+  data: Uint8Array
+}): Mat
+
+export declare function resize(
+  src: Mat,
+  dst: Mat,
+  size: Size,
+  fx?: number,
+  fy?: number,
+  inter?: number
+)
+
+export declare function matchTemplate(
+  image: Mat,
+  templ: Mat,
+  result: Mat,
+  method: number,
+  mask?: Mat
+): void
 
 /**
  * Fixed size array with the length of 4
