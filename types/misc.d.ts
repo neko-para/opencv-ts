@@ -1,4 +1,5 @@
 export declare let onRuntimeInitialized: () => void
+export declare function getBuildInformation(): string
 
 /**
  * Fixed size array with the length of 4
