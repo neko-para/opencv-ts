@@ -32,7 +32,7 @@ export declare class Mat extends EmscriptenEmbindInstance<Mat> {
   dot(v: unknown): number
   elemSize(): number
   elemSize1(): number
-  empty(): number
+  empty(): boolean
   inv(method: number): void
   isContinuous(): boolean
   mul(mat: Mat, scale: number): Mat

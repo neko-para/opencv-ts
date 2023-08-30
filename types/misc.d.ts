@@ -15,6 +15,22 @@ export declare function matFromImageData(data: {
   data: Uint8Array
 }): Mat
 
+export declare function matchTemplate(
+  image: Mat,
+  templ: Mat,
+  result: Mat,
+  method: number,
+  mask?: Mat
+): void
+export declare function minMaxLoc(
+  image: Mat,
+  mask?: Mat
+): {
+  minVal: number
+  maxVal: number
+  minLoc: { x: number; y: number } // not Point
+  maxLoc: { x: number; y: number }
+}
 export declare function resize(
   src: Mat,
   dst: Mat,
@@ -23,14 +39,6 @@ export declare function resize(
   fy?: number,
   inter?: number
 )
-
-export declare function matchTemplate(
-  image: Mat,
-  templ: Mat,
-  result: Mat,
-  method: number,
-  mask?: Mat
-): void
 
 /**
  * Fixed size array with the length of 4

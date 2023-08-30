@@ -53,9 +53,9 @@ export declare const WARP_FILL_OUTLIERS: number
 export declare const WARP_INVERSE_MAP: number
 
 // TemplateMatchModes
-export declare const TM_SQDIFF: number
-export declare const TM_SQDIFF_NORMED: number
-export declare const TM_CCORR: number
-export declare const TM_CCORR_NORMED: number
-export declare const TM_CCOEFF: number
-export declare const TM_CCOEFF_NORMED: number
+export declare const TM_SQDIFF: 0
+export declare const TM_SQDIFF_NORMED: 1
+export declare const TM_CCORR: 2
+export declare const TM_CCORR_NORMED: 3
+export declare const TM_CCOEFF: 4
+export declare const TM_CCOEFF_NORMED: 5
