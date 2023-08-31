@@ -1,4 +1,4 @@
-import { Mat } from '.'
+import { Mat, MatVector } from '.'
 
 export declare let onRuntimeInitialized: () => void
 export declare function getBuildInformation(): string
@@ -22,6 +22,8 @@ export declare function minMaxLoc(
   maxLoc: { x: number; y: number }
 }
 export declare function resize(src: Mat, dst: Mat, size: Size, fx?: number, fy?: number, inter?: number)
+export declare function split(src: Mat, dst: MatVector): void
+export declare function transpose(src: Mat, dst: Mat): void
 
 /**
  * Fixed size array with the length of 4
