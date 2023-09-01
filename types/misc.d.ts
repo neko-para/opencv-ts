@@ -6,10 +6,12 @@ export declare function getBuildInformation(): string
 export declare function matFromArray(rows: number, cols: number, type: number, array: ArrayLike<number>): Mat
 export declare function matFromImageData(data: { width: number; height: number; data: Uint8Array }): Mat
 
+export declare function arcLength(src: Mat, close: boolean): number
 export declare function bitwise_and(src1: Mat, src2: Mat, dst: Mat, mask?: Mat): void
 export declare function bitwise_not(src: Mat, dst: Mat, mask?: Mat): void
 export declare function bitwise_or(src1: Mat, src2: Mat, dst: Mat, mask?: Mat): void
 export declare function bitwise_xor(src1: Mat, src2: Mat, dst: Mat, mask?: Mat): void
+export declare function contourArea(src: Mat, oriented?: boolean): number
 export declare function copyMakeBorder(
   src: Mat,
   dst: Mat,
