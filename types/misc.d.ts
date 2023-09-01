@@ -10,6 +10,16 @@ export declare function bitwise_and(src1: Mat, src2: Mat, dst: Mat, mask?: Mat):
 export declare function bitwise_not(src: Mat, dst: Mat, mask?: Mat): void
 export declare function bitwise_or(src1: Mat, src2: Mat, dst: Mat, mask?: Mat): void
 export declare function bitwise_xor(src1: Mat, src2: Mat, dst: Mat, mask?: Mat): void
+export declare function copyMakeBorder(
+  src: Mat,
+  dst: Mat,
+  top: number,
+  bottom: number,
+  left: number,
+  right: number,
+  type: number,
+  value?: Scalar
+): void
 export declare function inRange(src: Mat, lowerb: Mat | Scalar, upperb: Mat | Scalar, dst: Mat): void
 export declare function matchTemplate(src: Mat, templ: Mat, result: Mat, method: number, mask?: Mat): void
 export declare function minMaxLoc(

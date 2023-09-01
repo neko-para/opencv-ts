@@ -40,6 +40,14 @@ export declare const CV_64FC2: number
 export declare const CV_64FC3: number
 export declare const CV_64FC4: number
 
+// BorderTypes
+export declare const BORDER_CONSTANT: number
+export declare const BORDER_REPLICATE: number
+export declare const BORDER_REFLECT: number
+export declare const BORDER_WRAP: number
+export declare const BORDER_REFLECT_101: number
+export declare const BORDER_TRANSPARENT: number
+
 // InterpolationFlags
 export declare const INTER_NEAREST: number
 export declare const INTER_LINEAR: number
