@@ -20,12 +20,12 @@ export declare function copyMakeBorder(
   left: number,
   right: number,
   type: number,
-  value?: Scalar
+  value?: _Scalar
 ): void
 export declare function fillPoly(
   src: Mat,
   pts: MatVector,
-  color: Scalar,
+  color: _Scalar,
   lineType?: number,
   shift?: number,
   offset?: Point
@@ -38,7 +38,7 @@ export declare function findContours(
   method: number,
   offset?: Point
 ): void
-export declare function inRange(src: Mat, lowerb: Mat | Scalar, upperb: Mat | Scalar, dst: Mat): void
+export declare function inRange(src: Mat, lowerb: Mat | _Scalar, upperb: Mat | _Scalar, dst: Mat): void
 export declare function matchTemplate(src: Mat, templ: Mat, result: Mat, method: number, mask?: Mat): void
 export declare function mean(src: Mat, mask?: Mat): Scalar
 export declare function minAreaRect(pts: Mat): RotatedRect
@@ -55,7 +55,7 @@ export declare function polylines(
   src: Mat,
   pts: MatVector,
   closed: boolean,
-  color: Scalar,
+  color: _Scalar,
   thickness?: number,
   lineType?: number,
   shift?: number
@@ -65,43 +65,55 @@ export declare function split(src: Mat, dst: MatVector): void
 export declare function transpose(src: Mat, dst: Mat): void
 export declare function threshold(src: Mat, dst: Mat, thresh: number, maxval: number, type: number): void
 
-/**
- * Fixed size array with the length of 4
- */
 export declare class Scalar extends Array<number> {
-  '0': number
-  '1': number
-  '2': number
-  '3': number
-  length: 4
+  __marker: unknown
 
   constructor(v0?: number, v1?: number, v2?: number, v3?: number)
 
   static all(v: number): Scalar
 }
+type _Scalar = [number, number, number, number] | Scalar
 
-export declare class Range {
+export declare interface Range {
+  start: number
+  end: number
+}
+export declare class Range implements Range {
   start: number
   end: number
 
   constructor(start?: number, end?: number)
 }
 
-export declare class Point {
+export declare interface Point {
+  x: number
+  y: number
+}
+export declare class Point implements Point {
   x: number
   y: number
 
   constructor(width?: number, height?: number)
 }
 
-export declare class Size {
+export declare interface Size {
+  width: number
+  height: number
+}
+export declare class Size implements Size {
   width: number
   height: number
 
   constructor(width?: number, height?: number)
 }
 
-export declare class Rect {
+export declare interface Rect {
+  x: number
+  y: number
+  width: number
+  height: number
+}
+export declare class Rect implements Rect {
   x: number
   y: number
   width: number
@@ -112,9 +124,14 @@ export declare class Rect {
   constructor(x: number, y: number, width: number, height: number)
 }
 
-export declare class RotatedRect {
-  center: { x: number; y: number }
-  size: { width: number; height: number }
+export declare interface RotatedRect {
+  center: Point
+  size: Size
+  angle: number
+}
+export declare class RotatedRect implements RotatedRect {
+  center: Point
+  size: Size
   angle: number
 
   constructor()

@@ -5,12 +5,7 @@ export declare class Mat extends EmscriptenEmbindInstance<Mat> {
   constructor()
   constructor(mat: Mat)
   constructor(size: Size, type: number)
-  constructor(
-    rows: number,
-    cols: number,
-    type: number,
-    scalar?: Scalar | [number, number, number, number]
-  )
+  constructor(rows: number, cols: number, type: number, scalar?: _Scalar)
 
   static zeros(rows: number, cols: number, type: number): Mat
   static zeros(size: Size, type: number): Mat
@@ -40,7 +35,7 @@ export declare class Mat extends EmscriptenEmbindInstance<Mat> {
   row(x: number): Mat
   rowRange(beginrow: number, endrow: number): Mat
   rowRange(range: Range): Mat
-  setTo(scalar: Scalar | [number, number, number, number], mask?: Mat): void
+  setTo(scalar: _Scalar, mask?: Mat): void
   size(): Size
   t(): Mat
   total(): number
