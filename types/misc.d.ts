@@ -20,8 +20,26 @@ export declare function copyMakeBorder(
   type: number,
   value?: Scalar
 ): void
+export declare function fillPoly(
+  src: Mat,
+  pts: MatVector,
+  color: Scalar,
+  lineType?: number,
+  shift?: number,
+  offset?: Point
+): void
+export declare function findContours(
+  src: Mat,
+  contour: MatVector,
+  hierarchy: Mat,
+  mode: number,
+  method: number,
+  offset?: Point
+): void
 export declare function inRange(src: Mat, lowerb: Mat | Scalar, upperb: Mat | Scalar, dst: Mat): void
 export declare function matchTemplate(src: Mat, templ: Mat, result: Mat, method: number, mask?: Mat): void
+export declare function mean(src: Mat, mask?: Mat): Scalar
+export declare function minAreaRect(pts: Mat): RotatedRect
 export declare function minMaxLoc(
   src: Mat,
   mask?: Mat
@@ -31,9 +49,19 @@ export declare function minMaxLoc(
   minLoc: { x: number; y: number } // not Point
   maxLoc: { x: number; y: number }
 }
-export declare function resize(src: Mat, dst: Mat, size: Size, fx?: number, fy?: number, inter?: number)
+export declare function polylines(
+  src: Mat,
+  pts: MatVector,
+  closed: boolean,
+  color: Scalar,
+  thickness?: number,
+  lineType?: number,
+  shift?: number
+): void
+export declare function resize(src: Mat, dst: Mat, size: Size, fx?: number, fy?: number, inter?: number): void
 export declare function split(src: Mat, dst: MatVector): void
 export declare function transpose(src: Mat, dst: Mat): void
+export declare function threshold(src: Mat, dst: Mat, thresh: number, maxval: number, type: number): void
 
 /**
  * Fixed size array with the length of 4
@@ -80,4 +108,13 @@ export declare class Rect {
   constructor()
   constructor(point: Point, size: Size)
   constructor(x: number, y: number, width: number, height: number)
+}
+
+export declare class RotatedRect {
+  center: { x: number; y: number }
+  size: { width: number; height: number }
+  angle: number
+
+  constructor()
+  constructor(center: Point, size: Size, angle: number)
 }
