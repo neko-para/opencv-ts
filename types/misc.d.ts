@@ -2,6 +2,7 @@ import { Mat, MatVector } from '.'
 
 export declare let onRuntimeInitialized: () => void
 export declare function getBuildInformation(): string
+export declare function exceptionFromPtr(err: number): { code: number; msg: string }
 
 export declare function matFromArray(rows: number, cols: number, type: number, array: ArrayLike<number>): Mat
 export declare function matFromImageData(data: { width: number; height: number; data: Uint8Array }): Mat
